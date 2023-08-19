@@ -4,8 +4,7 @@ const inquirer = require('inquirer');
 // const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-inquirer
-  .prompt([
+const Questions = [
 //description, table of contents, installation, usage, license, contributing, tests, questions
     {
       type: 'input',
@@ -39,7 +38,7 @@ inquirer
       name: 'contributers',
       message: 'List sources that contributed to your application'
     },
-  ])
+  ]
   .then((response) => {
 response.confirm === response.password
   ? console.log('Success!')
@@ -50,7 +49,7 @@ response.confirm === response.password
 
 // TODO: Create a function to write README file
 
-function writeToFile(fileName, data) {
+function writeFile(fileName, data) {
     writeFile(fileName, data, (err) => {
         if (err) {
             console.error('Error writing README:', err);
@@ -61,9 +60,39 @@ function writeToFile(fileName, data) {
 };
 
 // TODO: Create a function to initialize app
-// function init() {
-//     inquirer.prompt();
-// }
+function init() {
+    inquirer.prompt(Questions)
+    .then(data => {
+      // Step 1: Process user input and generate markdown content
+      const markdownContent = generateMarkdown(data);
+      return markdownContent;
+  })
+  .then(markdownContent => {
+      // Step 2: Write the generated markdown to a file
+      return writeFile('output.md', markdownContent); // Adjust the file name as needed
+  })
+  .then(writeFileResponse => {
+      console.log(writeFileResponse);
+      // Step 3: Copy files
+      return copyFile();
+  })
+  .then(copyFileResponse => {
+      console.log(copyFileResponse);
+      // All steps completed successfully
+      console.log('Process completed successfully!');
+  })
+  .catch(err => {
+      // Handle errors
+      console.log('An error occurred:', err);
+  });
+
+
+
+
+
+
+      
+}
 
 // // Function call to initialize app
-// init();
+init();
