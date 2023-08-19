@@ -50,15 +50,15 @@ response.confirm === response.password
 
 // TODO: Create a function to write README file
 
-// function writeToFile(fileName, data) {
-//     writeFile(fileName, data, (err) => {
-//         if (err) {
-//             console.error('Error writing README:', err);
-//         } else {
-//             console.log('README file has been created!');
-//         } 
-//         })
-// };
+function writeToFile(fileName, data) {
+    writeFile(fileName, data, (err) => {
+        if (err) {
+            console.error('Error writing README:', err);
+        } else {
+            console.log('README file has been created!');
+        } 
+        })
+};
 
 // TODO: Create a function to initialize app
 // function init() {
