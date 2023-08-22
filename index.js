@@ -1,11 +1,11 @@
 // TODO: Include packages needed for this application
-// const { writeFile, copyFile } =  './Develop/utils/generateFile.js';
+const generateFile =  require('./Develop/utils/generateFile.js');
 const inquirer = require('inquirer');
-// const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
+const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const Questions = [
-//description, table of contents, installation, usage, license, contributing, tests, questions
+
     {
       type: 'input',
       message: 'Describe your project. What is the purpose of it and what world problem does it solve?',
@@ -38,19 +38,44 @@ const Questions = [
       name: 'contributers',
       message: 'List sources that contributed to your application'
     },
-  ]
-  .then((response) => {
-response.confirm === response.password
-  ? console.log('Success!')
-  : console.log('Please answer questions!')
-  })
+    {
+      type: 'input',
+      name: 'github', 
+      message: 'Enter your GitHub username?',
+      validate: userInput => {
+        if (userInput) {
+          return true;
+        } else {
+          console.log('Type GitHub Username');
+        }
+        }
+    },
+    {
+      type: 'input',
+      name: 'gitLink',
+      message: 'Enter your GitHub profile Link',
+      validate: linkInput => {
+        if (linkInput) {
+          return true;
+        } else {
+          console.log('Enter your GitHub link');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Type the email you would like to '
+    }
 
-  // const markdownContent = generateMarkdown(data);
+  ]
+
 
 // TODO: Create a function to write README file
 
-function writeFile(fileName, data) {
-    writeFile(fileName, data, (err) => {
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
         if (err) {
             console.error('Error writing README:', err);
         } else {
@@ -69,7 +94,8 @@ function init() {
   })
   .then(markdownContent => {
       // Step 2: Write the generated markdown to a file
-      return writeFile('output.md', markdownContent); // Adjust the file name as needed
+      const fileName = 'output.md';
+      writeToFile('output.md', markdownContent); // Adjust the file name as needed
   })
   .then(writeFileResponse => {
       console.log(writeFileResponse);
@@ -80,6 +106,11 @@ function init() {
       console.log(copyFileResponse);
       // All steps completed successfully
       console.log('Process completed successfully!');
+  })
+  .then((response) => {
+    response.confirm === response.password
+      ? console.log('Success!')
+      : console.log('Please answer questions!')
   })
   .catch(err => {
       // Handle errors
