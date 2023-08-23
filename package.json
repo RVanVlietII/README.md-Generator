@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "respository": {
+    "type": "git",
+    "url": "git+https://github.com/RVanVlietII/README.md-Generator"
   }
 }
