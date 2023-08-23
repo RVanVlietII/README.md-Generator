@@ -10,6 +10,14 @@ const Questions = [
       type: 'input',
       message: 'Describe your project. What is the purpose of it and what world problem does it solve?',
       name: 'description',
+      validate: descriptionInput => {
+        if (descriptionInput) {
+          return true;
+        } else {
+          console.log('Describe your project for your audience');
+          return false;
+        }
+      }
     },
     {
       type: 'list',
@@ -20,12 +28,39 @@ const Questions = [
     {
       type: 'input',
       name: 'installation',
-      message: 'Identify the packages the user must install for application to run properly'
+      message: 'Identify the packages the user must install for application to run properly',
+      validate: installationInput => {
+        if (installationInput) {
+          return true;
+        } else {
+          console.log('Enter instructions for installation')
+          return false;
+        }
+      }
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'How should users use your application?'
+      message: 'How should users use your application?',
+      validate: usageInput => {
+        if (usageInput) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'testing',
+      message: 'Type input instructions for testing App',
+      validate: testingInput => {
+        if (testingInput) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     },
     {
       type: 'list',
@@ -35,8 +70,16 @@ const Questions = [
     },
     {
       type: 'input',
-      name: 'contributers',
-      message: 'List sources that contributed to your application'
+      name: 'contributer',
+      message: 'List source (GitHub Link) that contributed to your application',
+      validate: contributerInput => {
+        if (contributerInput) {
+          return true;
+        } else {
+          console.log('Enter source of contribution by GitHub Link');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -66,8 +109,29 @@ const Questions = [
     {
       type: 'input',
       name: 'email',
-      message: 'Type the email you would like to '
-    }
+      message: 'Type the email you would like to be contacted at?',
+      validate: emailInput => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('Enter email');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'title',
+      message: 'Type name of the repo for the README',
+      validate: titleInput => {
+        if (titleInput) {
+          return true;
+        } else {
+          console.log('Enter your project name');
+          return false;
+        }
+      }
+    },
 
   ]
 
@@ -115,14 +179,7 @@ function init() {
   .catch(err => {
       // Handle errors
       console.log('An error occurred:', err);
-  });
-
-
-
-
-
-
-      
+  });   
 }
 
 // // Function call to initialize app
