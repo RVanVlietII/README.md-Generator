@@ -1,20 +1,30 @@
 const fs = require('fs');
-// const questions = require('./Class/Week-9/README.md-Generator/index.js');
 
-const writeFile = fileContent => {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./Develop/README.md', fileContent, err => {
-            if (err) {
-                reject(err);
-                return;
-            }
+
+// const writeFile = fileContent => {
+//     return new Promise((resolve, reject) => {
+//         fs.writeFile('./Develop/created', fileContent, err => {
+//             if (err) {
+//                 reject(err);
+//                 return;
+//             }
         
-        resolve({
-            ok: true,
-            message: 'Your new README.md file is now available!'
-        });
-        });
-    });
-};
+//         resolve({
+//             ok: true,
+//             message: 'Your new README.md file is now available!'
+//         });
+//         });
+//     });
+// };
 
-module.exports = { writeFile };
+
+function generateFile(filePath, content) {
+    fs.writeFile('./README.md-generator/created/newREADME.md', content, err => {
+      if (err) {
+        console.error('Error writing file:', err);
+      } else {
+        console.log('File has been created:', filePath);
+      }
+    });
+  }
+module.exports = generateFile;

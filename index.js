@@ -133,7 +133,7 @@ const Questions = [
       }
     },
 
-  ]
+  ];
 
 
 // TODO: Create a function to write README file
@@ -161,6 +161,9 @@ function init() {
       const fileName = 'output.md';
       writeToFile('output.md', markdownContent); // Adjust the file name as needed
   })
+  // .then(() => {
+  //   console.log('Process completed!');
+  // })
   .then(writeFileResponse => {
       console.log(writeFileResponse);
       // Step 3: Copy files
