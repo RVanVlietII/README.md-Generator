@@ -102,38 +102,7 @@ const testCheck = check => {
 }
 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {
-//   if(!license `${licenseLink}`) {
-//     return '';
-//   }
-//   switch (license) {
-//     case 'MIT':
-//       return '[https://opensource.org/licenses/MIT]';
-//     case 'Apache':
-//       return '[https://opensource.org/licenses/Apache-2.0]';
-//     // Add more cases for other license types
-//     default:
-// }
-// }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseSection(license) {
-//   if (!license) {
-//     return '';
-//   }
-//   switch (license) {
-//     case 'MIT':
-//       return 'This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT ) page for details.';
-//     case 'Apache':
-//       return 'This project is licensed under the Apache License 2.0 - see the [LICENSE](https://opensource.org/licenses/Apache-2.0) page for details.';
-//     // Add more cases for other license types
-//     default:
-//       return '';
-// }
-// }
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   // return `![GitHub](https://img.shields.io/github/license/${data.githubUsername}/${data.title})
