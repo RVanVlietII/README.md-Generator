@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+const fs = require('fs');
 const generateFile =  require('./Develop/utils/generateFile.js');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
@@ -20,10 +21,20 @@ const Questions = [
       }
     },
     {
-      type: 'list',
+      type: 'checkbox',
       message: 'Write the table of contents you wish to have in your README for your viewers',
       name: 'tableOfContents',
-      choices: ['Introduction', 'Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions']
+      choices: [
+        
+        '* [Introduction](#introduction)\n',
+        '* [Installation](#installation)\n', 
+        '* [Usage](#usage)\n', 
+        '* [License](#license)\n',
+        '* [Contributing](#contributing)\n',
+        '* [Tests](#tests)\n',
+        '* [Questions](#questions)\n',
+      ],
+      filter: (choices) => choices.map(choice => `  ${choice}`).join('\n'),
     },
     {
       type: 'input',
@@ -154,31 +165,31 @@ function init() {
     .then(data => {
       // Step 1: Process user input and generate markdown content
       const markdownContent = generateMarkdown(data);
-      return markdownContent;
+      return markdownContent.split('\n').join('\n');
   })
   .then(markdownContent => {
       // Step 2: Write the generated markdown to a file
-      const fileName = 'output.md';
-      writeToFile('output.md', markdownContent); // Adjust the file name as needed
+      const folderPath = './created/';
+      const fileName = `${folderPath}proREADME.md`;
+      writeToFile(fileName, markdownContent); // Adjust the file name as needed
   })
   // .then(() => {
   //   console.log('Process completed!');
   // })
   .then(writeFileResponse => {
       console.log(writeFileResponse);
-      // Step 3: Copy files
-      return copyFile();
+      // // Step 3: Copy files
+      // return copyFile();
   })
-  .then(copyFileResponse => {
-      console.log(copyFileResponse);
-      // All steps completed successfully
-      console.log('Process completed successfully!');
-  })
-  .then((response) => {
-    response.confirm === response.password
-      ? console.log('Success!')
-      : console.log('Please answer questions!')
-  })
+  // .then(copyFileResponse => {
+  //     console.log(copyFileResponse);
+  //     // All steps completed successfully
+  // })
+  // .then((response) => {
+  //   response.confirm === response.password
+  //     ? console.log('Success!')
+  //     : console.log('Please answer questions!')
+  // })
   .catch(err => {
       // Handle errors
       console.log('An error occurred:', err);
