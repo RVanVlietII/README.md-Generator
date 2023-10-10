@@ -74,7 +74,7 @@ const generateTesting = testText => {
   if (!testText) {
     return ''
   } else {
-    return `## Testing
+    return `## Tests
   ${testText}
   `
   }
@@ -113,16 +113,13 @@ function generateMarkdown(data) {
   ${data.description}
   ## Table of Contents
   ${data.tableOfContents}
-  
-  
-  
   ${generateInstall(data.installation)}
   ## Usage
   ${data.usage}
   ## License
   * This application is covered under the ${data.license} license. ${renderLicenseLink(data.license)} 
   ${generateContribute(data.contributer)}
-  ${generateTesting(data.testing)}
+  ${generateTesting(data.tests)}
   ## Questions
   Created by: [${data.github}](${data.gitLink})
   

@@ -25,14 +25,13 @@ const Questions = [
       message: 'Write the table of contents you wish to have in your README for your viewers',
       name: 'tableOfContents',
       choices: [
-        
-        '* [Introduction](#introduction)\n',
-        '* [Installation](#installation)\n', 
-        '* [Usage](#usage)\n', 
-        '* [License](#license)\n',
-        '* [Contributing](#contributing)\n',
-        '* [Tests](#tests)\n',
-        '* [Questions](#questions)\n',
+      '* [Description](#description)\n',
+      '* [Installation](#installation)\n', 
+      '* [Usage](#usage)\n', 
+      '* [License](#license)\n',
+      '* [Contributors](#contributors)\n',
+      '* [Tests](#tests)\n',
+      '* [Questions](#questions)\n',
       ],
       filter: (choices) => choices.map(choice => `  ${choice}`).join('\n'),
     },
@@ -63,10 +62,10 @@ const Questions = [
     },
     {
       type: 'input',
-      name: 'testing',
+      name: 'tests',
       message: 'Type input instructions for testing App',
-      validate: testingInput => {
-        if (testingInput) {
+      validate: testsInput => {
+        if (testsInput) {
           return true;
         } else {
           return false;
