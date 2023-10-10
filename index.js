@@ -172,23 +172,12 @@ function init() {
       const fileName = `${folderPath}README.md`;
       writeToFile(fileName, markdownContent); // Adjust the file name as needed
   })
-  // .then(() => {
-  //   console.log('Process completed!');
-  // })
+ 
   .then(writeFileResponse => {
       console.log(writeFileResponse);
-      // // Step 3: Copy files
-      // return copyFile();
+    
   })
-  // .then(copyFileResponse => {
-  //     console.log(copyFileResponse);
-  //     // All steps completed successfully
-  // })
-  // .then((response) => {
-  //   response.confirm === response.password
-  //     ? console.log('Success!')
-  //     : console.log('Please answer questions!')
-  // })
+  
   .catch(err => {
       // Handle errors
       console.log('An error occurred:', err);
