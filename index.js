@@ -169,7 +169,7 @@ function init() {
   .then(markdownContent => {
       // Step 2: Write the generated markdown to a file
       const folderPath = './created/';
-      const fileName = `${folderPath}proREADME.md`;
+      const fileName = `${folderPath}README.md`;
       writeToFile(fileName, markdownContent); // Adjust the file name as needed
   })
   // .then(() => {
