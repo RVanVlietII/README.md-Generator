@@ -20,11 +20,14 @@ Because this application won’t be deployed, you’ll also need to provide a li
 
 
 ## Repo URL
+https://github.com/RVanVlietII/README.md-Generator
 
 ## Walkthrough Video
 https://drive.google.com/file/d/1vwFfwGU0i-FXNUa8EkoLBrtutLenZB9T/view?pli=1
 
 ## Sample Generated README.md 
-/Users/robertvanvliet/theBootcamp/Class/Week-9/README.md-Generator/created/proREADME.md
+
+<img width="1470" alt="Screenshot 2023-10-10 at 3 31 20 PM (2)" src="https://github.com/RVanVlietII/README.md-Generator/assets/129308007/096b68d8-fda5-493f-a0d9-fdcc89599d96">
+
 
 
