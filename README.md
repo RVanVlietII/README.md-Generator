@@ -26,8 +26,5 @@ https://github.com/RVanVlietII/README.md-Generator
 https://drive.google.com/file/d/1vwFfwGU0i-FXNUa8EkoLBrtutLenZB9T/view?pli=1
 
 ## Sample Generated README.md 
-
-<img width="1470" alt="Screenshot 2023-10-10 at 3 31 20 PM (2)" src="https://github.com/RVanVlietII/README.md-Generator/assets/129308007/096b68d8-fda5-493f-a0d9-fdcc89599d96">
-
-
+![Screenshot 2023-10-10 at 3 31 20 PM](https://github.com/RVanVlietII/README.md-Generator/assets/129308007/1118c79c-2998-4507-89e8-5775683dea48)
 
