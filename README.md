@@ -19,13 +19,12 @@ A high-quality README leads to a more professional application and you can creat
 Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality. Revisit the Screencastify Tutorial in the prework as a refresher on how to record video from your computer. You’ll need to submit a link to the video _and_ add it to the README of your project.
 
 
-## Review
+## Repo URL
 
-You are required to submit the following for review:
+## Walkthrough Video
+https://drive.google.com/file/d/1vwFfwGU0i-FXNUa8EkoLBrtutLenZB9T/view?pli=1
 
-* A walkthrough video demonstrating the functionality of the application.
+## Sample Generated README.md 
+/Users/robertvanvliet/theBootcamp/Class/Week-9/README.md-Generator/created/proREADME.md
 
-* A sample README.md file for a project repository generated using your application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
 
